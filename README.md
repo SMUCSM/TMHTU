@@ -8,8 +8,8 @@ A rehash of Unity's 3 hour long tutorial videos located [here](http://unity3d.co
 Contributing
 =====
 
-1. Fork
-2. Make your own branch and work on it
+1. [Fork](https://help.github.com/articles/fork-a-repo)
+2. Make a branch on your own forked repository, and work from there. 
 3. Create and/or choose issues to work on
 4. Make a duplicate or new scene, rename it and create in that scene
 5. Save the scene and the project
