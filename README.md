@@ -9,7 +9,9 @@ Contributing
 =====
 
 1. Fork
-2. Make a duplicate scene, rename it and create in that scene
-3. Make a pull request for your features/scenes to be added
+2. Create and/or choose issues to work on
+3. Make a duplicate scene, rename it and create in that scene
+4. Save the scene and the project
+5. Make a pull request for your features/scenes to be added
 
 
