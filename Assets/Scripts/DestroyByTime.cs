@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyByTime : MonoBehaviour {
+public class DestroyByTime : MonoBehaviour 
+{
+	public float lifeTime; 	//how long the object will last
 
-	public float lifeTime;
-	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
 		Destroy(gameObject, lifeTime);
-		}
-
+	}
 }
