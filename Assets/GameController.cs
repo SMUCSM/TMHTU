@@ -12,11 +12,20 @@ public class GameController : MonoBehaviour
 	public float waveWaitTime;
 
 	public GUIText scoreText;
+	public GUIText restartText;
+	public GUIText gameOverText;
+
 	private int score;
+	private bool gameOver;
+	private bool restart;
 
 	// Use this for initialization
 	void Start () 
 	{
+		gameOver = false;
+		restart = false;
+		restartText.text = "";
+		gameOverText.text = "";
 		score = 0;
 		UpdateScore();
 		StartCoroutine(SpawnWaves());
@@ -35,7 +44,16 @@ public class GameController : MonoBehaviour
 				Instantiate(asteroid, spawnPosition, spawnRotation);
 				yield return new WaitForSeconds(spawnWaitTime);
 			}
+			if (gameOver)
+			{
+				restartText.text = "Press R to restart";
+				restart = true;
+				break;
+			}
+
 			yield return new WaitForSeconds(waveWaitTime);
+
+
 		}
 
 
@@ -47,6 +65,12 @@ public class GameController : MonoBehaviour
 		UpdateScore();
 	}
 
+	public void GameOver()
+	{
+		gameOverText.text = "Game Over!";
+		gameOver = true;
+	}
+
 	void UpdateScore()
 	{
 		scoreText.text = "Score: " + score;
@@ -54,7 +78,14 @@ public class GameController : MonoBehaviour
 
 
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		if (restart)
+		{
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				Application.LoadLevel(Application.loadedLevel);
+			}
+		}
 	}
 }
